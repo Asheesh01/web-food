@@ -898,3 +898,279 @@ button[type="submit"]:hover {
         padding: 40px 20px;
     }
 }
+/* Responsive CSS for JTGeats */
+
+/* Base responsive rules */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile-first media queries */
+
+/* General responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .navbar, .hero, .section-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .food-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar, .hero, .section-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero {
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 20px;
+  }
+  
+  .hero-text h1 {
+    font-size: 36px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    max-width: 360px;
+  }
+  
+  .contact-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  
+  .contact-image {
+    display: none; /* Hide on smaller screens or adjust as needed */
+  }
+  
+  .contact-container {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Navbar adjustments */
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .nav-links a {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+  
+  /* Food grid adjustments */
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Hero section adjustments */
+  .hero-text h1 {
+    font-size: 28px;
+  }
+  
+  .hero-text p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Popular items carousel */
+  .food-items-wrapper {
+    gap: 10px;
+  }
+  
+  .food-item {
+    width: 150px;
+  }
+  
+  .nav-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Video section */
+  .video-section {
+    padding: 30px 15px;
+  }
+  
+  .video-content h1 {
+    font-size: 24px;
+  }
+  
+  .video-content p {
+    font-size: 14px;
+  }
+  
+  .video-box {
+    width: 100%;
+  }
+  
+  /* Contact form */
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-row input {
+    width: 100%;
+  }
+  
+  /* Footer */
+  .navbar2 {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+}
+
+/* Popular Items Section specific adjustments */
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    padding: 0 25px; /* Give space for arrows */
+  }
+  
+  .food-items-wrapper {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .food-item {
+    scroll-snap-align: start;
+  }
+}
+
+/* Modal responsiveness */
+@media screen and (max-width: 576px) {
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal-buttons button {
+    width: 100%;
+  }
+}
+
+/* Fix for video section */
+.video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.video-box {
+  position: relative;
+  max-width: 100%;
+}
+
+.video-box img, 
+.video-box video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Additional fixes for very small screens */
+@media screen and (max-width: 360px) {
+  .navbar .logo {
+    font-size: 24px;
+  }
+  
+  .hero-text h1 {
+    font-size: 24px;
+  }
+  
+  .search-bar {
+    height: 40px;
+  }
+  
+  .search-bar input {
+    font-size: 12px;
+  }
+  
+  .search-bar button {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+
+/* CSS to remove the green line from the right side */
+
+/* Target the green element specifically */
+body > div:last-child,
+.green-sidebar,
+.green-border,
+[style*="background-color: #00c853"],
+[style*="background: green"],
+[style*="background: linear-gradient"] {
+  display: none !important;
+}
+
+/* Remove any green border that might be causing the line */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Remove any borders or shadows on containers */
+.container,
+main,
+section,
+article,
+div {
+  border-right: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix any possible container causing overflow */
+#app,
+#root,
+.app-container,
+.main-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* For fixed position elements */
+*[style*="position: fixed"],
+*[style*="position:fixed"] {
+  right: auto !important;
+}
+
+/* Additional fix for potential scroll issues */
+::-webkit-scrollbar {
+  width: 0 !important;
+  background: transparent !important;
+}
